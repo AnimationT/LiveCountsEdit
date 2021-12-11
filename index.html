@@ -62,6 +62,8 @@
     <script async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -1280,10 +1282,10 @@
                 <div class="inner">
                   <div class="index__activeChannelContent--Mqy5P">
                     <div class="index__left--1D8BY"><a href="https://www.youtube.com/channel/UCBR8-60-B28hp2BmDPdntcQ" target="_blank" rel="noreferrer" title="Go to YouTube's channel"><img class="index__profilePicture--24oDF index__loaded--31_uW" src="https://yt3.ggpht.com/584JjRp5QMuKbyduM_2k5RlXFqHJtQ0qLIPZpwbUjMJmgzZngHcam5JMuZQxyzGMV5ljwJRl0Q=s240-c-k-c0x00ffffff-no-rj" data-tip="Go to YouTube channel" alt="YouTube" currentitem="false"></a>
-                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Channel</span><span class="index__value--3w6TU">YouTube</span></div>
-                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Subscribers</span><span class="index__value--3w6TU">0</span></div>
-                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Videos</span><span class="index__value--3w6TU">0</span></div>
-                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Views</span><span class="index__value--3w6TU">0</span></div>
+                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Channel</span><span id="chanName" class="index__value--3w6TU">YouTube</span></div>
+                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Subscribers</span><span id="subCountNO" class="index__value--3w6TU">0</span></div>
+                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Videos</span><span id="videoCountNO" class="index__value--3w6TU">0</span></div>
+                      <div class="index__activeChannelDataContainer--2kWfu"><span class="index__label--ooY4q">Views</span><span id="viewCountNO" class="index__value--3w6TU">0</span></div>
                     </div>
                   </div>
                 </div>
@@ -1308,6 +1310,20 @@
                           </div>
                         </div>
                       </div><span class="index__subscriberCountLabel--2xa5H">YouTube Subscribers</span>
+                      <div class="inputStuff">
+                        Subs:
+                        <br/>
+                        <input type="text" id="subs"><button id="submit">Submit</button>
+                        <br/>
+                        Rates:
+                        <br/>
+                        <input type="text" id="rateMin" placeholder="Minimum Amount">
+                        <br/>
+                        <input type="text" id="rateMax" placeholder="Maximum Amount">
+                        <button id="setRates">Start Rates</button>
+                      </div>
+                      <br>
+                      <button id="hide">Hide</button>
                     </div>
                   </div>
                   <div class="index__ModalContainer--mPjzx" data-modal-active="false">
@@ -1363,6 +1379,9 @@
                               </g>
                             </g>
                           </svg><span class="odometer" id="viewCount" style="font-size: 30px;">0</span></div>
+                          <div class="inputStuff">
+                            
+                          </div>
                       </div>
                       <div class="index__ModalContainer--mPjzx" data-modal-active="false">
                         <div class="index__modalBackground--2d1m3"></div>
@@ -1521,6 +1540,7 @@
         <div></div>
       </div>
     </div><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
   </body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20211207/r20190131/zrt_lookup.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true"><ins id="aswift_6_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-table !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><ins id="aswift_6_anchor" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_6" name="" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/html/r20211207/r20110914/zrt_lookup.html?fsb=1#RS-0-&amp;adk=1812271808&amp;client=ca-pub-7204305893907840&amp;fa=8&amp;ifi=7&amp;uci=a!7" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" trusttoken="{&quot;type&quot;:&quot;send-redemption-record&quot;,&quot;issuers&quot;:[&quot;https://pagead2.googlesyndication.com&quot;],&quot;refreshPolicy&quot;:&quot;none&quot;,&quot;signRequestData&quot;:&quot;include&quot;,&quot;includeTimestampHeader&quot;:true,&quot;additionalSignedHeaders&quot;:[&quot;sec-time&quot;,&quot;Sec-Redemption-Record&quot;]}" data-google-container-id="a!7" data-google-query-id="CKSC1OWs2_QCFQjG7Qod1tcO0A" data-load-complete="true" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;"></iframe></ins></ins></ins>
 
 </html>
