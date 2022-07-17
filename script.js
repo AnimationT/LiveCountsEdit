@@ -114,3 +114,11 @@ async function requestData() {
       });
     });
   }, );
+
+  var chanImg;
+  var realChanImg;
+  function changeProfile() {
+    chanImg = window.prompt("Enter profile image please");
+    realChanImg 
+    alert("All Done!")
+  }
